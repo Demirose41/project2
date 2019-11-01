@@ -1,5 +1,5 @@
 # RdyCheck
-![screenshot](https://github.com/Demirose41/project2/issues/1#issue-516262964)
+![screenshot](https://user-images.githubusercontent.com/54557826/68047741-4ab53c80-fc9c-11e9-9bbe-bdd7f387a136.png)
 
 ## About
 Rdycheck is a web based application designed to be a quick a quick way to check the status of your friend as you get preparred for your planned activities. 
