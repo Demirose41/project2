@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+     <%- include('../partials/navbar.ejs')%>
+<div class="content">
+
+    <h1>Events index</h1>
+    <ul>
+        <li>
+            <a href="/events/new">New Event</a>
+        </li>
+    </ul>
+    <h2>Current Events</h2>
+    <ul>
+        <% for(let i =0; i<events.length;i++){ %>
+                <li>
+                    <a href="/events/<%=events[i]._id%>/edit"><button>Edit</button></a>
+                    <a href="/events/<%=events[i]._id%>"><%=events[i].title%></a>
+                    <section>
+                    <form action="/events/<%=events[i]._id%>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </section>
+                    </li>
+                <%}%>
+            </ul>
+        </div>  
+    </body>
+</html>

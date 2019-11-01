@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+ <header>
+        <%- include('../partials/navbar.ejs')%>
+ </header>
+ <div class="content">
+
+     <form action="/events" method="POST">
+        <p>Event Title...</p>
+        <input type="text" name="title"/><br/>
+        <p>Date...</p>
+        <input type="datetime-local" name="date"/><br/>
+            <p>Attendee's</p>
+            <input id="memberName" type="text" value="username" name="username" >
+            <input id="memberRole"  type="text" value="role" name="role">
+            <div class="addMember">add</div><br/>
+        <div class="content">
+            <ul class="addedMembers">   
+
+            </ul>
+        </div>
+        <input type="submit" value="Make Event"><br/>
+    </form>
+</div>
+<script>
+    let memberCount = 0;
+    const members = [[],[]];
+$('.addMember').click(function(){
+    members[memberCount][0] = $("#memberName").val();
+    members[memberCount][1] = $('#memberRole').val();
+   $('.addedMembers').append("<li> <p name='members.username'>"+$("#memberName").val()+"</p><p name='members.role'>       Role: "+$('#memberRole').val() +"<p/></li>")
+    memberCount++;
+})
+</script>
+</body>
+</html>

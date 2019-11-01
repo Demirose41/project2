@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+     <%- include('../partials/navbar.ejs')%>
+     <div class="content">
+        <ul>
+                <li>
+                        <a href="/events/<%=event._id%>/edit"><button>Edit</button></a>
+                        <a href="/events/<%=event._id%>"><%=event.title%></a>
+                        <section>
+                        <form action="/events/<%=event._id%>?_method=DELETE" method="POST">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </section>
+                        </li>
+                        <ul>
+                            <li>
+                                <p>Attendee's</p>
+                                <li>
+                                    <%=event.username%>
+                                    <%=event.role%>
+                                  
+                                    <form action="/events/<%=event._id%>/ready?_method=PUT" method="POST">
+                                    <% if(event.ready){ %>
+                                        <button type="submit"  id="rdy">Rdy!</button>
+                                       
+                                        <%}else{%>
+                                        <button type="submit" id="notRdy">Rdy?</button>
+                                        <%}%>
+                                </form>
+                            </li>
+                        </ul>
+            <li><%=event.date%></li>
+        </ul>
+        </div>
+</body>
+</html>

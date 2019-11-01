@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+        <%- include('../partials/navbar.ejs')%>
+        <div class="content">
+
+                <form action="/events/<%=event._id%>?_method=PUT" method="POST">
+                   <p>Event Title...</p>
+                   <input type="text" name="title" value="<%=event.title%>"/><br/>
+                   <p>Date...</p>
+                   <input type="datetime-local" name="date" value ="<%=event.date%>"/><br/>
+                   <p>Attendee's</p>
+                      
+                                <input id="memberName" type="text" name="username" value="<%=event.username%>">
+                                <input id="memberRole"  type="text" name= value="<%=event.role%>">
+                                
+                        
+                   
+                   <div class="content">
+                       <ul class="addedMembers">   
+           
+                       </ul>
+                   </div>
+                   <input type="submit" value="Submit"><br/>
+               </form>
+           </div>
+</body>
+</html>
