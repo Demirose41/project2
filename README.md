@@ -1,5 +1,5 @@
 # RdyCheck
-![alt text]https://imgur.com/8icfxka
+![alt text](https://imgur.com/8icfxka)
 ## About
 Rdycheck is a web based application designed to be a quick a quick way to check the status of your friend as you get preparred for your planned activities. 
 
